@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Rule</title>
+</head>
+<body>
+    <h1>Create a Rule</h1>
+
+    {% if error %}
+        <div style="color: red;">Error: {{ error }}</div>  <!-- Display the error message -->
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="rule">Enter Rule:</label><br>
+        <input type="text" id="rule" name="rule"><br><br>
+        <input type="submit" value="Create Rule">
+    </form>
+</body>
+</html>

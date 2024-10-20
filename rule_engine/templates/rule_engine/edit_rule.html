@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Rule</title>
+</head>
+<body>
+    <h1>Edit Rule</h1>
+
+    {% if error %}
+        <div style="color: red;">Error: {{ error }}</div>  <!-- Display the error message -->
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="rule">Edit Rule:</label><br>
+        <input type="text" id="rule" name="rule" value="{{ node.value }}"><br><br>  <!-- Pre-fill with existing rule -->
+        <input type="submit" value="Update Rule">
+    </form>
+</body>
+</html>
